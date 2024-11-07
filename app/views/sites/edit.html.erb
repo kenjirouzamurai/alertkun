@@ -1,0 +1,7 @@
+<div class="container py-3">
+  <%= form_with model: @site, local: true do |form| %>
+    <%= render "form", form: form %>
+    <%= form.submit "更新する", class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "削除", delete_site_path(@site) %>
+</div>

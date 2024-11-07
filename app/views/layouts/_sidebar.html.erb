@@ -1,0 +1,33 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky pt-3">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a href="<%= sites_path %>" class="nav-link <%= active_if('sites', 'index') %>" aria-current="page">サイト一覧</a>
+      </li>
+      <li class="nav-item">
+        <a href="<%= setup_path %>" class="nav-link <%= active_if('management','setup') %>">導入手順</a>
+      </li>
+      <hr>
+      <li class="nav-item">
+        <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link px-3" %>
+      </li>
+
+
+<!--       <li class="nav-item">
+        <a class="nav-link">
+          <span data-feather="shopping-cart" class="align-text-bottom"></span>
+          ユーザー管理
+        </a>
+      </li> -->
+
+      <li class="nav-item d-md-none">
+        <span data-feather="shopping-cart" class="align-text-bottom"></span>
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link" %>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

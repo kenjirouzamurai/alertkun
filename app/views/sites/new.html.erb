@@ -1,0 +1,7 @@
+<div class="container py-3">
+  <%= form_with model: @site do |form| %>
+    <%= render "form", form: form %>
+
+    <%= form.submit "登録する", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,0 +1,91 @@
+<div class="container pt-4">
+  <section class="mb-5">
+    <h1 class="h2">アラート君とは？</h1>
+    <hr>
+    <p class="h6">サイトにアクセスができない時に、LINEアプリに通知してくれるサービスです。</p>
+    <img src="/alertman/images/top_1.png" style="max-width: 400px; width: 100%;">
+  </section>
+
+  <section class="mb-5">
+    <h2 class="h2">どんなときに便利？</h2>
+    <hr>
+    <ul>
+      <li class="h6">サーバーが停止した場合に、速やかに復旧対応ができる</li>
+      <li class="h6">どの期間サーバーが止まっていたかを知ることがでる</li>
+      <li class="h6">サーバーが停止した場合に、メンバー全員にLINEで通知を出すことがでる</li>
+      <li class="h6">複数のサイトを登録ができる</li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="h2">導入方法</h2>
+    <hr>
+    <p>導入方法は非常にシンプルです。※所要時間3分程度</p>
+    <ol>
+      <li>お問合せをいただき、弊社にて管理画面ログイン用アカウントを発行</li>
+      <li>ご自身のスマートフォンでQRコードを読み取る</li>
+      <li>サイトを登録</li>
+    </ol>
+
+  </section>
+
+  <section style="max-width: 600px;">
+    <h2 class="h2">お問い合わせフォーム</h2>
+    <hr>
+    <%= form_with(model: @contact, local: true) do |f| %>
+      <div>
+        <% if @contact.errors.any? %>
+          <div>
+            <ul class="p-0" style="list-style-type: none;"><% @contact.errors.full_messages.each do |message| %>
+              <li><p class="mb-1 fs-6 fw-bolder text-danger"><%= message %></p></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div>
+          <div>
+              <div class="mb-3">
+                <%= f.label :name, "お名前*" ,class: "form-label" %>
+                <%= f.text_field :name, placeholder: "お名前", class: "form-control", required: true %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :emial, "メールアドレス*" %>
+                <%= f.text_field :email, placeholder: "info@rivelty.jp", class: "form-control", required: true %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :company_name, "会社名" %>
+                <%= f.text_field :company_name, placeholder: "株式会社リベルティ", class: "form-control" %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :message, "お問合せ内容*" %>
+                <%= f.text_area :message, placeholder: "運用についてなど", class: "form-control" %>
+              </div>
+              <div class="mb-3">
+                <input type="text" value="<%= rand(100) %>" style="width: 36px" id="rand"> 左の数値を入力してください
+                <input type="text" id="number">
+              </div>
+              <div>
+                <div class=" col-6 mx-auto">
+                  <%= f.button type: "submit", id: "submit", class: "btn btn-primary", style:'border-style: none; width: 100%', disabled: true do %> 
+                    送信 
+                  <% end %>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</div>
+
+<script>
+  $(function() {
+    $("#number").on("change", function() {
+      const number = $("#number").val();
+      const rand = $("#rand").val();
+      if(number === rand) {
+        $("#submit").attr("disabled", false);
+      }
+    });
+  })
+</script>

@@ -1,0 +1,14 @@
+<div class="mb-3">
+  <%= form.label :name, "サイト名", class: "form-label" %>
+  <%= form.text_field :name, class: "form-control", required: true, placeholder: "クイズ職人" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :domain, "URL", class: "form-label" %>
+  <%= form.text_field :domain, class: "form-control", required: true, placeholder: "https://example.com" %>
+</div>
+
+<div class="mb-3">
+  <%= form.label :domain, "タイムアウト時間(秒)", class: "form-label" %>
+  <%= form.text_field :timeout, class: "form-control", required: true, placeholder: "10", type: :number %>
+</div>

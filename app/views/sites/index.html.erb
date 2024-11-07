@@ -1,0 +1,29 @@
+<div class="container">
+  <%= link_to "サイト作成", new_site_path, class: "btn btn-primary my-2" %>
+  <div class="table-responsive ">
+    <table class="table">
+      <thead>
+        <tr>
+          <th nowrap scope="col">id</th>
+          <th nowrap scope="col">サイト名</th>
+          <th nowrap scope="col">ドメイン</th>
+          <th nowrap scope="col">直近10回の平均応答時間</th>
+          <th nowrap scope="col">結果</th>
+          <th nowrap scope="col">確認日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sites.each do |site| %>
+        <tr>
+          <th scope="row"><%= site.id %></th>
+          <td><%= link_to site.name, edit_site_path(site) %></td>
+          <td><%= site.domain %></td>
+          <td><%= site.decorate.avg_response_time %>s</td>
+          <td><%= site.decorate.result_status %></td>
+          <td nowrap><%= site.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

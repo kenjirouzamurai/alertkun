@@ -1,0 +1,18 @@
+{
+  "entrypoints": {
+    "management": {
+      "js": [
+        "/packs/js/management-c5736303c0ab24d02d49.js"
+      ],
+      "js.map": [
+        "/packs/js/management-c5736303c0ab24d02d49.js.map"
+      ]
+    }
+  },
+  "management.js": "/packs/js/management-c5736303c0ab24d02d49.js",
+  "management.js.map": "/packs/js/management-c5736303c0ab24d02d49.js.map",
+  "media/fonts/materialdesignicons-webfont.eot?v=6.6.96": "/packs/media/fonts/materialdesignicons-webfont-599efba6.eot",
+  "media/fonts/materialdesignicons-webfont.ttf?v=6.6.96": "/packs/media/fonts/materialdesignicons-webfont-616f0de3.ttf",
+  "media/fonts/materialdesignicons-webfont.woff2?v=6.6.96": "/packs/media/fonts/materialdesignicons-webfont-4c0f6c23.woff2",
+  "media/fonts/materialdesignicons-webfont.woff?v=6.6.96": "/packs/media/fonts/materialdesignicons-webfont-a926f7aa.woff"
+}
