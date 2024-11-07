@@ -11,14 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_05_080633) do
-  create_table "companies", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "companies", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.integer "plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "contacts", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false, comment: "担当者名"
     t.string "company_name", comment: "会社名"
     t.string "email", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_080633) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "histories", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "histories", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "site_id"
     t.boolean "result", comment: "結果"
     t.string "message", comment: "エラーメッセージ"
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_080633) do
     t.index ["site_id"], name: "index_histories_on_site_id"
   end
 
-  create_table "sites", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "sites", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false, comment: "サイト名"
     t.string "domain", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_080633) do
     t.index ["user_id"], name: "index_sites_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "company_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

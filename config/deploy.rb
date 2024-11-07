@@ -1,7 +1,7 @@
 # lock "~> 3.16.0"
 
-set :application, 'urahara'
-set :repo_url, "git@github.com:kenjirouzamurai/urahara.git"
+set :application, 'alertkun'
+set :repo_url, "git@github.com:kenjirouzamurai/alertkun.git"
 set :user, "kyamada"
 set :puma_service_unit_name, 'puma.service'
 set :rbenv_ruby, '3.1.1'
@@ -11,7 +11,7 @@ set :ssh_options, {
   forward_agent: true
 }
 set :keep_releases, 1
-set :deploy_to, '/var/www/html/urahara'
+set :deploy_to, '/var/www/html/alertkun'
 set :linked_dirs, %w{log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle}
 append :linked_files, 'config/database.yml', 'config/master.key', '.env'
 set :bundle_bins, fetch(:bundle_bins).to_a.concat(%w{ puma pumactl })
