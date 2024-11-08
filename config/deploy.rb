@@ -1,10 +1,7 @@
-# lock "~> 3.16.0"
-
 set :application, 'alertkun'
 set :repo_url, "git@github.com:kenjirouzamurai/alertkun.git"
 set :user, "kyamada"
-set :puma_service_unit_name, 'puma.service'
-set :rbenv_ruby, '3.1.1'
+set :puma_service_unit_name, 'puma_alertkun.service'
 
 set :ssh_options, {
   keys: [File.expand_path('~/.ssh/rivelty.pem')],
@@ -15,23 +12,12 @@ set :deploy_to, '/var/www/html/alertkun'
 set :linked_dirs, %w{log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle}
 append :linked_files, 'config/database.yml', 'config/master.key', '.env'
 set :bundle_bins, fetch(:bundle_bins).to_a.concat(%w{ puma pumactl })
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-append :rbenv_map_bins, 'puma', 'pumactl'
-
+set :asdf_map_ruby_bins, %w{rake gem bundle ruby rails}
+append :asdf_map_ruby_bins, 'puma', 'pumactl'
 set :nvm_type, :user
 set :nvm_node, "v17.9.0"
 set :nvm_map_bins, %w{npm node yarn rake}
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-
-# namespace :webpack do
-#   after "yarn:install", "webpack:build"
-#   task :build do
-#     on roles(:app) do
-#       execute "source ~/.bash_profile && cd #{release_path} && yarn build"
-#       # execute "source ~/.bash_profile && cd #{release_path} && RAILS_ENV=#{fetch(:rails_env)} bundle exec rails webpacker:compile"
-#     end
-#   end
-# end
 
 namespace :deploy do
   desc 'restart nginx'

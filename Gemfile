@@ -68,9 +68,9 @@ group :development do
   gem "capistrano-rails", "~> 1.6", require: false
   gem 'capistrano3-puma'
   gem 'capistrano-bundler'
-  # gem 'capistrano-rvm'
+  gem 'capistrano-asdf'
+
   gem 'net-ssh', '7.0.0.beta1'
-  gem 'capistrano-rbenv'
 
   gem "capistrano-nvm", require: false
   gem 'capistrano-yarn'

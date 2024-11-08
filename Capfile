@@ -7,9 +7,7 @@ install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Systemd
 
 install_plugin Capistrano::SCM::Git
-# require 'capistrano/rvm'
-require 'capistrano/rbenv'
-
+require 'capistrano/asdf'
 
 require "capistrano/bundler"
 require "capistrano/rails/migrations"

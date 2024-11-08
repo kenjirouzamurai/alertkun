@@ -3,7 +3,7 @@ puts "【Alertkun】本番環境に入りました"
 
 # サーバ情報
 puts "サーバーアクセス情報は安全の為にコメントアウトしております。"
-server '52.195.215.103',  user: 'ec2-user', port: 22, password: fetch(:password), roles: %w{web app db}
+server '54.65.7.114',  user: 'ec2-user', port: 22, password: fetch(:password), roles: %w{web app db}
 
 set :branch, 'main' #マージ前なら他のブランチでも設定可能
 
