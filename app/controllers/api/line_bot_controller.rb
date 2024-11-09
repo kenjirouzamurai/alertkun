@@ -52,9 +52,8 @@ private
     return @client if @client.present?
 
     @client = Line::Bot::Client.new do |config|
-      config.channel_id     = ENV["LINE_ID"]
-      config.channel_secret = ENV["LINE_SECRET"]
-      config.channel_token  = ENV["LINE_TOKEN"]
+      config.channel_id     = Rails.application.credentials[:line_login_api][:channel_id]
+      config.channel_secret = Rails.application.credentials[:line_login_api][:channel_secret]
     end
   end
 end

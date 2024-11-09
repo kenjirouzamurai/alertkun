@@ -4,9 +4,8 @@ require "open-uri"
 namespace :ping do
   task health_check: :environment do
     @client = Line::Bot::Client.new do |config|
-      config.channel_id     = ENV["LINE_ID"]
-      config.channel_secret = ENV["LINE_SECRET"]
-      config.channel_token  = ENV["LINE_TOKEN"]
+      config.channel_id     = Rails.application.credentials[:line_message_api][:channel_id]
+      config.channel_secret = Rails.application.credentials[:line_message_api][:channel_secret]
     end
 
     History.where("created_at < ?", 2.months.ago).destroy_all if rand(100) == 1
