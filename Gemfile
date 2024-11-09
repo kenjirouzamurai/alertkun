@@ -71,6 +71,7 @@ group :development do
   gem 'capistrano-asdf'
 
   gem 'net-ssh', '7.0.0.beta1'
+  gem 'pry-rails'
 
   gem "capistrano-nvm", require: false
   gem 'capistrano-yarn'

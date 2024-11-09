@@ -6,6 +6,7 @@ namespace :ping do
     @client = Line::Bot::Client.new do |config|
       config.channel_id     = Rails.application.credentials[:line_message_api][:channel_id]
       config.channel_secret = Rails.application.credentials[:line_message_api][:channel_secret]
+      config.channel_token  = Rails.application.credentials[:line_message_api][:channel_token]
     end
 
     History.where("created_at < ?", 2.months.ago).destroy_all if rand(100) == 1
@@ -34,7 +35,7 @@ namespace :ping do
         "text": "#{site.domain} の読み込みに失敗しました\n #{e}"
       }
 
-      if site.histories.second_to_last.result? && Rails.env.production?
+      if site.histories.second_to_last&.result?
         @client.push_message(site.user.line_id, message)
       end
 
