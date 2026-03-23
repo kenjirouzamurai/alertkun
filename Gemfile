@@ -70,7 +70,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-asdf'
 
-  gem 'net-ssh', '7.0.0.beta1'
+  gem 'net-ssh'
   gem 'pry-rails'
 
   gem "capistrano-nvm", require: false
