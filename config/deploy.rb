@@ -1,7 +1,6 @@
 set :application, 'alertkun'
 set :repo_url, "git@github.com:kenjirouzamurai/alertkun.git"
-set :user, "kyamada"
-set :puma_service_unit_name, 'puma_alertkun.service'
+set :user, "ec2-user"
 
 set :ssh_options, {
   keys: [File.expand_path('~/.ssh/rivelty.pem')],

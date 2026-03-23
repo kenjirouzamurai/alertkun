@@ -17,3 +17,4 @@ set :unicorn_rack_env, 'production'
 set :log_level, :debug
 
 set :pty, false
+set :puma_service_unit_name, 'puma.service'
