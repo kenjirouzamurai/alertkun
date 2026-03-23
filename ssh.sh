@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh -i ~/.ssh/rivelty.pem ec2-user@54.65.7.114
+ssh -i ~/.ssh/rivelty.pem ec2-user@54.199.128.22
