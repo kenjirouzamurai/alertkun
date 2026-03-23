@@ -14,7 +14,7 @@ set :rails_env, 'production'
 set :unicorn_rack_env, 'production'
 
 #出力するログのレベル。
-set :log_level, :debug
+set :log_level, :error
 
 set :pty, false
 set :puma_service_unit_name, 'puma_alertkun.service'
