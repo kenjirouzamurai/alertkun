@@ -18,3 +18,4 @@ set :log_level, :debug
 
 set :pty, false
 set :puma_service_unit_name, 'puma.service'
+set :puma_systemctl_user, :system
